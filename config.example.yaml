@@ -1,0 +1,3 @@
+data_path: "data/private/11.13data.xls"
+output_dir: "output_local"
+figure_dir: "output_local/figures"
