@@ -5,7 +5,7 @@ Status: PASS
 | Check | Result |
 |---|---|
 | Git working tree | clean after final commit |
-| Remote configuration | empty |
+| Remote configuration | Published repository tracks origin/main; local and remote HEAD were verified at release. |
 | Public tests | 18 passed |
 | Local integration tests | 3 passed |
 | Fresh clone tests | 18 passed |

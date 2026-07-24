@@ -1,6 +1,6 @@
 ﻿path,size_bytes,sha256,file_type,public_purpose
 .gitattributes,121,0789eca381040a34451c98a4760e40d0d684bf06d2e8fb62e32d00b226fdf695,text,repository metadata
-.github/workflows/tests.yml,521,cd503db3694b56d81c345388e314b33c58ee5fc11870e3e29e3cc08f6ecb65ba,configuration,example configuration or workflow
+.github/workflows/tests.yml,521,c6208e1a9bddc9d8521bfdd48bef4567e40966471330b127b78f3cc1d9bd9f82,configuration,example configuration or workflow
 .gitignore,266,d63e9dda6e18b26234f11bfd9c270814d65afcad87ee03b10b156dcea6843cca,text,repository metadata
 README.md,4297,e063100ca1c43ba4e00651f95d3c75587aa2721130b5cd7454c12d8424390116,documentation,public project documentation or QA summary
 config.example.yaml,102,6c8a9937e2b940f4228bcd41ec73ed654dbf0c5b04076d67bdbf7f5e3817094c,configuration,example configuration or workflow
@@ -24,7 +24,7 @@ pyproject.toml,142,6383d06b1c45ed41eb1c56b71ab9c38f02e7bc6c0a3f302486481c61b663b
 qa/AI_TRACE_SCAN.md,128,ec6628aea5a6c597eaa27f3f11783dc33deb5bf3080ff5b8eec2677b33ea9983,documentation,public project documentation or QA summary
 qa/LINK_CHECK.csv,669,13d4623f5b5898490460222986b1b9c78c34f01ce3f2bcd0121f8e7a53a2d97c,summary data,"public schema, QA register, or generated summary results"
 qa/PUBLIC_FILE_REGISTER.csv,self_hash_excluded,self_hash_excluded,summary data,this register; self hash excluded to avoid a non-convergent hash cycle
-qa/QUALITY_GATE.md,499,08cc7cf5198227808ea3b00d6dcaf9332d16ccbb5d1c92b915421c389353043b,documentation,public project documentation or QA summary
+qa/QUALITY_GATE.md,582,7349c542b33c0806dd30e74092797003b2e183610ac9c5eb8da6be1abac2a90c,documentation,public project documentation or QA summary
 qa/README.md,453,aeaa02ee68059fe784fe433409f683ebec7888c4ca0977340cbece462c9dd257,documentation,public project documentation or QA summary
 qa/SECURITY_SCAN.md,262,88c2900eabc05da2d7f3984f25ec343dadc57976dbe55c8ef495e65ad7c50c13,documentation,public project documentation or QA summary
 requirements.txt,106,2ac87a5085449e418f667e26ffd883c4352312db1e6dd1d14eb17df1e245e1ef,text,small public text metadata
