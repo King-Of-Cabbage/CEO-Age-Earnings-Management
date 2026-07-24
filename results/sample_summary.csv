@@ -1,0 +1,11 @@
+﻿metric,value
+records,13125
+ceo_age_missing,6
+descriptive_sample,13119
+baseline_sample,12529
+baseline_firms,2944
+year_min,2014
+year_max,2024
+young_ceo_count,5749
+senior_ceo_count,6780
+median_split_mismatch,0
