@@ -18,7 +18,7 @@ The public models use firm and year fixed effects. The main reported inference u
 
 ## Main Re-Estimated Results
 
-In the firm-clustered baseline specification, the association between `CEO_age_w` and `AEM_w` is positive: coefficient 4,727,401.705, or 4.727 RMB million for display. The p-value is 0.0352. The association between `CEO_age_w` and `REM` is negative: coefficient -0.0020135, with p-value 0.0861. The REM estimate reaches the 10% level under the main firm-clustered setting, so it should be read as weaker than the AEM result.
+In the firm-clustered baseline specification, CEO age is positively associated with the AEM measure: coefficient 4,727,401.705 (approximately 4.73 x 10^6 in the measure's units), with p-value 0.0352. The association between `CEO_age_w` and `REM` is negative: coefficient -0.0020135, with p-value 0.0861. The REM estimate reaches the 10% level under the main firm-clustered setting, so it should be read as weaker than the AEM result.
 
 ## Reproducible Scope
 
