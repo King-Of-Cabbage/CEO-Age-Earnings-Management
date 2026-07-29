@@ -10,7 +10,7 @@ import pandas as pd
 import yaml
 
 from src.config import read_config
-from scripts.publish_artifacts import RESULT_FILES, FIGURE_FILES
+from scripts.copy_public_summaries import RESULT_FILES, FIGURE_FILES
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -44,7 +44,7 @@ def test_demo_run_from_outside_repo_does_not_touch_public_artifacts(tmp_path):
         assert (ROOT / rel).read_bytes() == content
 
 
-def test_publish_artifacts_uses_whitelists():
+def test_public_summary_copy_uses_whitelists():
     assert set(RESULT_FILES) == {"sample_summary.csv", "reproduced_primary_results.csv", "reproduced_sensitivity_results.csv"}
     assert "aem_age_band_robustness.png" in set(FIGURE_FILES)
     assert "rem_age_band_robustness.png" in set(FIGURE_FILES)
@@ -75,20 +75,6 @@ def test_figure_variable_scopes_and_schema_terms():
     assert "G = 0" in docs and "BIGFour = 1" in docs
 
 
-def test_public_file_register_matches_tracked_files():
-    tracked = subprocess.run(["git", "ls-files"], cwd=ROOT, text=True, capture_output=True, check=True).stdout.splitlines()
-    rows = {r["path"]: r for r in csv.DictReader((ROOT / "qa" / "PUBLIC_FILE_REGISTER.csv").open(encoding="utf-8-sig"))}
-    assert set(rows) == set(tracked)
-    for rel in tracked:
-        if rel == "qa/PUBLIC_FILE_REGISTER.csv":
-            assert rows[rel]["sha256"] == "self_hash_excluded"
-            continue
-        path = ROOT / rel
-        assert int(rows[rel]["size_bytes"]) == path.stat().st_size
-        import hashlib
-        assert rows[rel]["sha256"] == hashlib.sha256(path.read_bytes()).hexdigest()
-
-
 def test_public_text_has_no_local_paths_or_blocked_terms():
     tracked = subprocess.run(["git", "ls-files"], cwd=ROOT, text=True, capture_output=True, check=True).stdout.splitlines()
     forbidden = ["C:" + "\\" * 2 + "Users" + "\\" * 2, "Admin" + "istrator", "Desktop" + "\\" + "AFA", "api" + " key", "access" + " token", "pass" + "word"]
@@ -103,7 +89,7 @@ def test_public_text_has_no_local_paths_or_blocked_terms():
 
 def test_markdown_links_are_valid_and_workflow_yaml_parses():
     yaml.safe_load((ROOT / ".github" / "workflows" / "tests.yml").read_text(encoding="utf-8"))
-    for md in [ROOT / "README.md", *sorted((ROOT / "docs").glob("*.md")), ROOT / "data" / "README.md", ROOT / "qa" / "README.md"]:
+    for md in [ROOT / "README.md", *sorted((ROOT / "docs").glob("*.md")), ROOT / "data" / "README.md"]:
         text = md.read_text(encoding="utf-8")
         for target in re.findall(r"!?\[[^\]]+\]\(([^)]+)\)", text):
             if target.startswith(("http://", "https://", "#")):

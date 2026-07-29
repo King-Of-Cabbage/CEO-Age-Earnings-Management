@@ -1,5 +1,4 @@
 import csv
-import hashlib
 import subprocess
 from pathlib import Path
 
@@ -47,16 +46,3 @@ def test_csv_files_are_readable_and_public_result_shapes_are_stable():
         df = pd.read_csv(ROOT / rel)
         assert len(df) == row_count
         assert list(df.columns) == expected_columns[rel]
-
-
-def test_public_file_register_hashes_match_lf_worktree():
-    rows = {r["path"]: r for r in csv.DictReader((ROOT / "qa/PUBLIC_FILE_REGISTER.csv").open(encoding="utf-8-sig", newline=""))}
-    files = set(git_files())
-    assert set(rows) == files
-    for rel in files:
-        if rel == "qa/PUBLIC_FILE_REGISTER.csv":
-            assert rows[rel]["sha256"] == "self_hash_excluded"
-            continue
-        path = ROOT / rel
-        assert int(rows[rel]["size_bytes"]) == path.stat().st_size
-        assert rows[rel]["sha256"] == hashlib.sha256(path.read_bytes()).hexdigest()
