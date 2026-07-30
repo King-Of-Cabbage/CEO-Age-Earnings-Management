@@ -8,7 +8,7 @@ The repository does not include real observations. Users must provide a licensed
 
 ## Dependent Variables
 
-`AEM_w` is the winsorized accrual-based earnings management measure. `REM` is the real earnings management measure used in baseline, median split, ownership, and auditor-group models. `REM_w` is used for the fixed age-band robustness model.
+`AEM_w` is the winsorized accrual-based earnings management measure retained from the project data. The public reconstruction does not assign a monetary unit or scaling denominator to this field because that scale cannot be verified from the available project materials. `REM` is the real earnings management measure used in baseline, median split, ownership, and auditor-group models. `REM_w` is used for the fixed age-band robustness model.
 
 ## Controls
 

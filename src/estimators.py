@@ -63,7 +63,7 @@ def format_result(spec, result, data, xvar, layer):
         "observations": int(data.shape[0]),
         "firms": int(data.reset_index()["id"].nunique()),
         "coefficient": coef,
-        "coefficient_million_rmb": coef / 1_000_000 if spec.dependent == "AEM_w" else "",
+        "coefficient_scaled_millions": coef / 1_000_000 if spec.dependent == "AEM_w" else "",
         "standard_error": float(result.std_errors[xvar]),
         "t_statistic": float(result.tstats[xvar]),
         "p_value": p_value,

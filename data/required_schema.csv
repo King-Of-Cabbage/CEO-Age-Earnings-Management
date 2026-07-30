@@ -4,7 +4,7 @@ year,time identifier,integer,all analyses,Fiscal year.
 CEO_age,descriptive variable,numeric,sample validation,Raw CEO age.
 CEO_age_w,core explanatory variable,numeric,all public regression models,Winsorized CEO age.
 Young_CEO,group variable,integer,median split,Young_CEO = 1 means CEO_age_w < 53; age 53 belongs to the senior group.
-AEM_w,dependent variable,numeric,AEM models,Winsorized accrual-based earnings management measure.
+AEM_w,dependent variable,numeric,AEM models,Winsorized accrual-based earnings management measure retained in the source data scale.
 REM,dependent variable,numeric,baseline and subgroup REM models,Real earnings management measure.
 REM_w,dependent variable,numeric,fixed age-band REM models,Winsorized real earnings management measure.
 Degree_w,control,numeric,regression controls,Winsorized education-related CEO control.

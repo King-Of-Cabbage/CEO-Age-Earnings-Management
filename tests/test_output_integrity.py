@@ -105,6 +105,7 @@ def test_readme_baseline_numbers_match_public_csv():
         if row["dependent_variable"] == "AEM_w":
             assert f"{row['coefficient']:,.3f}" in readme
             assert f"{row['p_value']:.4f}" in readme
+            assert "RMB" not in readme
         if row["dependent_variable"] == "REM":
             assert f"{row['coefficient']:.7f}" in readme
             assert f"{row['p_value']:.4f}" in readme
